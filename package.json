@@ -1,0 +1,19 @@
+{
+  "name": "backendcrudcafeteria",
+  "version": "1.0.0",
+  "description": "practica de conceptos de backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "request",
+    "response",
+    "get",
+    "post",
+    "put",
+    "delete"
+  ],
+  "author": "Arias Emilse",
+  "license": "ISC"
+}
