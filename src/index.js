@@ -25,4 +25,11 @@ app.use(express.static(path.join(__dirname,'../public')))
 app.get('/products',(req, res)=>{
 //aqui escribo toda la logica que quiero que suceda cuando llega un request
  res.send('aqui enviaria una lista de productos');
+
+
+
+
+
+
+ 
 })
