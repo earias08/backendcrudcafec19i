@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import router from './routes/productos.routes';
 
 //crear una instancia de express
 const app = express();
@@ -21,15 +22,5 @@ app.use(express.urlencoded({extended:true}));
 //cargar un archivo estatico
 app.use(express.static(path.join(__dirname,'../public')))
 
-//creamos una ruta de prueba
-app.get('/products',(req, res)=>{
-//aqui escribo toda la logica que quiero que suceda cuando llega un request
- res.send('aqui enviaria una lista de productos');
-
-
-
-
-
-
- 
-})
+//aqui van las rutas
+app.use('/apicafe',router)
