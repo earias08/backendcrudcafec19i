@@ -6,4 +6,9 @@ productoCtrl.listarProductos = (req, res)=>{
     res.send('aqui enviaria la lista de productos')
 }
 
+productoCtrl.crearProducto = (req, res)=>{
+    console.log(req.body)
+    res.send('doy de alta un producto')
+}
+
 export default productoCtrl;
