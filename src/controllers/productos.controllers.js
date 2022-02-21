@@ -44,4 +44,44 @@ productoCtrl.crearProducto = async(req, res) => {
   }
 };
 
+productoCtrl.obtenerProducto = async(req, res)=>{
+  try {
+    console.log(req.params.id);
+    const productoBuscado = await Producto.findById(req.params.id);
+    res.status(200).json(productoBuscado);
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al buscar un producto",
+    });
+  }
+}
+
+productoCtrl.editarProducto = async(req, res)=>{
+  try {
+    //buscar el producto por id y modificar sus datos
+    //validar
+    await Producto.findByIdAndUpdate(req.params.id, req.body);
+    res.status(200).json({mensaje:'Se edito correctamente el producto solicitado'});
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar edicar un producto",
+    });
+  }
+}
+
+productoCtrl.borrarProducto = async (req, res)=>{
+  try {
+    //buscar un producto por el id y borrar
+    await Producto.findByIdAndDelete(req.params.id);
+    res.status(200).json({mensaje:'El producto fue eliminado correctamente'}); 
+  } catch (error) {
+    console.log(error);
+    res.status(404).json({
+      mensaje: "Error al intentar borrar un producto",
+    });
+  }
+}
+
 export default productoCtrl;
